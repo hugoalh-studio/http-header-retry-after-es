@@ -145,7 +145,7 @@ An ES (JavaScript & TypeScript) module to handle the [HTTP header `Retry-After`]
 
 - ```ts
   class HTTPHeaderRetryAfter {
-    constructor(value: number | string | Date | Headers | HTTPHeaderRetryAfter | Response): HTTPHeaderRetryAfter;
+    constructor(input: number | string | Date | Headers | HTTPHeaderRetryAfter | Response): this;
     getDate(): Date;
     getRemainTimeMilliseconds(): number;
     getRemainTimeSeconds(): number;
