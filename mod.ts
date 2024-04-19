@@ -1,36 +1,38 @@
+const regexpDecimalInteger = /^\d+$/;
+const regexpHTTPDate = /^[A-Z][a-z][a-z], \d\d [A-Z][a-z][a-z] \d\d\d\d \d\d:\d\d:\d\d GMT$/;
 /**
- * Handle HTTP header `Retry-After` according to RFC 9110 standard.
+ * Handle the HTTP header `Retry-After` according to the specification RFC 9110.
  */
 export class HTTPHeaderRetryAfter {
+	get [Symbol.toStringTag](): string {
+		return "HTTPHeaderRetryAfter";
+	}
 	#timestamp: Date;
 	/**
-	 * @param {number | string | Date | Headers | HTTPHeaderRetryAfter | Response} value
+	 * @param {number | string | Date | Headers | HTTPHeaderRetryAfter | Response} input Input.
 	 */
-	constructor(value: number | string | Date | Headers | HTTPHeaderRetryAfter | Response) {
-		if (typeof value === "number") {
-			if (!(value >= 0)) {
-				throw new RangeError(`Argument \`value\` is not a number which is positive!`);
+	constructor(input: number | string | Date | Headers | HTTPHeaderRetryAfter | Response) {
+		if (input instanceof HTTPHeaderRetryAfter) {
+			this.#timestamp = new Date(input.#timestamp);
+		} else if (input instanceof Date) {
+			this.#timestamp = new Date(input);
+		} else if (typeof input === "number") {
+			if (!(input >= 0)) {
+				throw new RangeError(`Argument \`input\` is not a number which is positive!`);
 			}
-			this.#timestamp = new Date(Date.now() + value * 1000);
-		} else if (value instanceof Date) {
-			this.#timestamp = new Date(value);
-		} else if (value instanceof HTTPHeaderRetryAfter) {
-			this.#timestamp = new Date(value.#timestamp);
+			this.#timestamp = new Date(Date.now() + input * 1000);
 		} else {
-			let valueRaw: string;
-			if (value instanceof Headers) {
-				valueRaw = value.get("Retry-After") ?? "";
-			} else if (value instanceof Response) {
-				valueRaw = value.headers.get("Retry-After") ?? "";
+			const inputRaw: string = (
+				(input instanceof Response) ? input.headers.get("Retry-After") :
+					(input instanceof Headers) ? input.get("Retry-After") :
+						input
+			) ?? "";
+			if (regexpHTTPDate.test(inputRaw)) {
+				this.#timestamp = new Date(inputRaw);
+			} else if (regexpDecimalInteger.test(inputRaw)) {
+				this.#timestamp = new Date(Date.now() + Number(inputRaw) * 1000);
 			} else {
-				valueRaw = value;
-			}
-			if (/^[A-Z][a-z][a-z], \d\d [A-Z][a-z][a-z] \d\d\d\d \d\d:\d\d:\d\d GMT$/.test(valueRaw)) {
-				this.#timestamp = new Date(valueRaw);
-			} else if (/^\d+$/.test(valueRaw)) {
-				this.#timestamp = new Date(Date.now() + Number(valueRaw) * 1000);
-			} else {
-				throw new SyntaxError(`\`${valueRaw}\` is not a valid HTTP header \`Retry-After\` syntax!`);
+				throw new SyntaxError(`\`${inputRaw}\` is not a valid HTTP header \`Retry-After\` syntax!`);
 			}
 		}
 	}
@@ -39,7 +41,7 @@ export class HTTPHeaderRetryAfter {
 	 * @returns {Date}
 	 */
 	getDate(): Date {
-		return this.#timestamp;
+		return new Date(this.#timestamp);
 	}
 	/**
 	 * Get remain time in milliseconds.
