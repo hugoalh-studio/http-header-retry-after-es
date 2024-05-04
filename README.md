@@ -75,7 +75,7 @@ An ES (JavaScript & TypeScript) module to handle the [HTTP header `Retry-After`]
 
 *This module does not require any permission.*
 
-## 🧩 API
+## 🧩 APIs
 
 - ```ts
   class HTTPHeaderRetryAfter {
@@ -93,7 +93,7 @@ An ES (JavaScript & TypeScript) module to handle the [HTTP header `Retry-After`]
 > - [Deno CLI `deno doc`](https://deno.land/manual/tools/documentation_generator)
 > - [JSR](https://jsr.io/@hugoalh/http-header-retry-after)
 
-## ✍️ Example
+## ✍️ Examples
 
 - ```ts
   new HTTPHeaderRetryAfter("Wed, 21 Oct 2015 07:28:00 GMT").getRemainTimeMilliseconds();
