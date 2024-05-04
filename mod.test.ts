@@ -1,6 +1,6 @@
-import { assert } from "STD/assert/assert.ts";
-import { assertEquals } from "STD/assert/assert_equals.ts";
-import { assertThrows } from "STD/assert/assert_throws.ts";
+import { assert } from "STD/assert/assert";
+import { assertEquals } from "STD/assert/assert-equals";
+import { assertThrows } from "STD/assert/assert-throws";
 import { HTTPHeaderRetryAfter } from "./mod.ts";
 Deno.test("String Good 1", { permissions: "none" }, () => {
 	const instance = new HTTPHeaderRetryAfter("Wed, 21 Oct 2015 07:28:00 GMT");
