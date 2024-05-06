@@ -21,32 +21,18 @@ An ES (JavaScript & TypeScript) module to handle the [HTTP header `Retry-After`]
 
 > **ℹ️ Note**
 >
-> It is possible to use this module in other ways which not listed in here, however it is not officially supported.
+> It is possible to use this module in other methods/ways which not listed in here, however it is not officially supported.
 
 ### #️⃣ Registries Identifier
 
-<table><tbody align="left">
-<tr>
-<th>JSR</th>
-<td width="100%">
-
-```
-@hugoalh/http-header-retry-after
-```
-
-</td>
-</tr>
-<tr>
-<th>NPM</th>
-<td width="100%">
-
-```
-@hugoalh/http-header-retry-after
-```
-
-</td>
-</tr>
-</tbody></table>
+- **JSR:**
+  ```
+  @hugoalh/http-header-retry-after
+  ```
+- **NPM:**
+  ```
+  @hugoalh/http-header-retry-after
+  ```
 
 > **ℹ️ Note**
 >
@@ -55,7 +41,7 @@ An ES (JavaScript & TypeScript) module to handle the [HTTP header `Retry-After`]
 
 ### #️⃣ Remote Import Paths
 
-- Via GitHub Raw (Require Tag)
+- **GitHub Raw:** (Require Tag)
   ```
   https://raw.githubusercontent.com/hugoalh-studio/http-header-retry-after-es/${Tag}/mod.ts
   ```
