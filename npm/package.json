@@ -1,6 +1,6 @@
 {
 	"name": "@hugoalh/http-header-retry-after",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A module to handle the HTTP header `Retry-After` according to the specification RFC 9110.",
 	"keywords": [
 		"header",
