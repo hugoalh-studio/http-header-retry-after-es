@@ -9,6 +9,7 @@ export class HTTPHeaderRetryAfter {
 	}
 	#timestamp: Date;
 	/**
+	 * Handle the HTTP header `Retry-After` according to the specification RFC 9110.
 	 * @param {number | string | Date | Headers | HTTPHeaderRetryAfter | Response} input Input.
 	 */
 	constructor(input: number | string | Date | Headers | HTTPHeaderRetryAfter | Response) {
