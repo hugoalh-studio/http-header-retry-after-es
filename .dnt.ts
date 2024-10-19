@@ -8,11 +8,11 @@ await invokeDenoNodeJSTransformer({
 		"LICENSE.md",
 		"README.md"
 	],
-	entrypoints: configJSR.exports,
+	entrypoints: configJSR.getExports(),
 	generateDeclarationMap: true,
 	metadata: {
-		name: "@hugoalh/http-header-retry-after",
-		version: configJSR.version,
+		name: configJSR.getName(),
+		version: configJSR.getVersion(),
 		description: "A module to handle the HTTP header `Retry-After` according to the specification RFC 9110.",
 		keywords: [
 			"header",
