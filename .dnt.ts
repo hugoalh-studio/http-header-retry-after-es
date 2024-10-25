@@ -19,15 +19,15 @@ await invokeDenoNodeJSTransformer({
 			"http",
 			"retry-after"
 		],
-		homepage: "https://github.com/hugoalh-studio/http-header-retry-after-es#readme",
+		homepage: "https://github.com/hugoalh/http-header-retry-after-es#readme",
 		bugs: {
-			url: "https://github.com/hugoalh-studio/http-header-retry-after-es/issues"
+			url: "https://github.com/hugoalh/http-header-retry-after-es/issues"
 		},
 		license: "MIT",
 		author: "hugoalh",
 		repository: {
 			type: "git",
-			url: "git+https://github.com/hugoalh-studio/http-header-retry-after-es.git"
+			url: "git+https://github.com/hugoalh/http-header-retry-after-es.git"
 		},
 		scripts: {
 		},

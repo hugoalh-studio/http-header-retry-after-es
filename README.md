@@ -2,7 +2,7 @@
 
 [**⚖️** MIT](./LICENSE.md)
 
-[![GitHub: hugoalh-studio/http-header-retry-after-es](https://img.shields.io/github/v/release/hugoalh-studio/http-header-retry-after-es?label=hugoalh-studio/http-header-retry-after-es&labelColor=181717&logo=github&logoColor=ffffff&sort=semver&style=flat "GitHub: hugoalh-studio/http-header-retry-after-es")](https://github.com/hugoalh-studio/http-header-retry-after-es)
+[![GitHub: hugoalh/http-header-retry-after-es](https://img.shields.io/github/v/release/hugoalh/http-header-retry-after-es?label=hugoalh/http-header-retry-after-es&labelColor=181717&logo=github&logoColor=ffffff&sort=semver&style=flat "GitHub: hugoalh/http-header-retry-after-es")](https://github.com/hugoalh/http-header-retry-after-es)
 [![JSR: @hugoalh/http-header-retry-after](https://img.shields.io/jsr/v/@hugoalh/http-header-retry-after?label=@hugoalh/http-header-retry-after&labelColor=F7DF1E&logo=jsr&logoColor=000000&style=flat "JSR: @hugoalh/http-header-retry-after")](https://jsr.io/@hugoalh/http-header-retry-after)
 [![NPM: @hugoalh/http-header-retry-after](https://img.shields.io/npm/v/@hugoalh/http-header-retry-after?label=@hugoalh/http-header-retry-after&labelColor=CB3837&logo=npm&logoColor=ffffff&style=flat "NPM: @hugoalh/http-header-retry-after")](https://www.npmjs.com/package/@hugoalh/http-header-retry-after)
 
@@ -26,7 +26,7 @@ An ES (JavaScript & TypeScript) module to handle the [HTTP header `Retry-After`]
 
 - **Remote - GitHub Raw:**
   ```
-  https://raw.githubusercontent.com/hugoalh-studio/http-header-retry-after-es/{Tag}/mod.ts
+  https://raw.githubusercontent.com/hugoalh/http-header-retry-after-es/{Tag}/mod.ts
   ```
 - **JSR:**
   ```
