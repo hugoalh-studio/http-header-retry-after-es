@@ -56,10 +56,13 @@ An ES (JavaScript & TypeScript) module to handle the [HTTP header `Retry-After`]
 
 - ```ts
   class HTTPHeaderRetryAfter {
-    constructor(input: number | string | Date | Headers | HTTPHeaderRetryAfter | Response): this;
+    constructor(input: number | string | Date | Headers | Response);
     getDate(): Date;
     getRemainTimeMilliseconds(): number;
     getRemainTimeSeconds(): number;
+    get date(): Date;
+    get remainTimeMilliseconds(): number;
+    get remainTimeSeconds(): number;
   }
   ```
 
